@@ -1,4 +1,17 @@
 # eksctl create cluster --config-file=eksctl.yaml
+# apiVersion: eksctl.io/v1alpha5
+# kind: ClusterConfig
+
+# metadata:
+#   name: roboshop
+#   region: us-east-1
+# managedNodeGroups:
+#   - name: managed
+#     instanceType: t3.micro
+#     desiredCapacity: 3
+#     spot: true
+
+
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -7,6 +20,6 @@ metadata:
   region: us-east-1
 managedNodeGroups:
   - name: managed
-    instanceType: t3.micro
-    desiredCapacity: 3
+    instanceTypes: ["c3.large","c4.large","c5.large","c5d.large","c5n.large","c5a.large"]
+    desiredCapacity: 2
     spot: true
